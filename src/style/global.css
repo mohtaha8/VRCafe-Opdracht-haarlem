@@ -1,0 +1,131 @@
+/* ALGEMENE STYLING */
+body {
+  margin:           0;
+  padding:          0;
+  font-family:      Arial, sans-serif;
+  background-color: #111;
+  color:            white;
+}
+
+/* HEADER */
+header {
+  text-align:       center;
+  padding:          30px;
+  background-color: #1b1b1b;
+  border-bottom:    3px solid purple;
+}
+
+header h1 {
+  margin: 0;
+  color:  #bb90f8;
+}
+
+header p {
+  color: #cccccc;
+}
+
+/* MAIN */
+main {
+  max-width: 900px;
+  margin:    auto;
+  padding:   20px;
+}
+
+/* TAAK TOEVOEGEN */
+.add-task-section {
+  display:       flex;
+  gap:           10px;
+  margin-bottom: 20px;
+}
+
+.add-task-section input,
+.add-task-section select,
+.add-task-section button {
+  padding:       12px;
+  border:        none;
+  border-radius: 8px;
+}
+
+.add-task-section input {
+  flex: 1;
+}
+
+/* BUTTONS */
+button {
+  background-color: purple;
+  color:            white;
+  cursor:           pointer;
+  transition:       0.3s;
+}
+
+button:hover {
+  background-color: deeppink;
+  transform:        scale(1.03);
+}
+
+/* FILTERS */
+.filter-section {
+  display:       flex;
+  gap:           10px;
+  margin-bottom: 20px;
+}
+
+/* TAKEN */
+.task {
+  background-color: #1e1e1e;
+  padding:          15px;
+  margin-bottom:    15px;
+  border-left:      5px solid #bb86fc;
+  border-radius:    10px;
+  animation:        fadeIn 0.3s ease;
+}
+
+.task h3 {
+  margin-top: 0;
+}
+
+.task p {
+  color: #bbbbbb;
+}
+
+.task-buttons {
+  margin-top: 10px;
+  display:    flex;
+  gap:        10px;
+}
+
+/* VOLTOOIDE TAAK */
+.completed {
+  opacity:         0.6;
+  text-decoration: line-through;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding:    20px;
+  color:      #888;
+}
+
+/* ANIMATIE */
+@keyframes fadeIn {
+  from {
+    opacity:   0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0px);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .add-task-section {
+    flex-direction: column;
+  }
+
+  .filter-section {
+    flex-direction: column;
+  }
+}

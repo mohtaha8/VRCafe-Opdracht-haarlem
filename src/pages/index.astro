@@ -1,11 +1,47 @@
----
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+import "../style/global.css";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VRCafe Todo App</title>
+	  </head>
+  <body>
+
+    <header>
+      <h1>🎮 VRCafe Todo App</h1>
+      <p>Beheer jouw taken makkelijk</p>
+    </header>
+
+    <main>
+<form class="add-task-section" id="taskForm" onsubmit="addTask(); return false;">
+        <input type="text" id="taskInput" placeholder="Voer een taak in" />
+        <select id="categorySelect">
+          <option value="Werk">Werk</option>
+          <option value="Persoonlijk">Persoonlijk</option>
+          <option value="Vrije tijd">Vrije tijd</option>
+        </select>
+        <button type="submit" id="addTaskBtn">Toevoegen</button>
+        <p id="errorMessage" style="color: red;"></p>
+      </form>
+
+      <section class="filter-section">
+        <button onclick="showAllTasks()">Alle taken</button>
+        <button onclick="showCompletedTasks()">Voltooid</button>
+        <button onclick="showOpenTasks()">Open</button>
+      </section>
+
+      <section id="taskContainer"></section>
+    </main>
+
+    <footer>
+      <p>VRCafe Haarlem Todo App</p>
+    </footer>
+
+    <script src="/script/script.js" defer></script>
+  </body>
+</html>
